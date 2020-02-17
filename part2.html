@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Homework 2 Part 2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Part 2</title>
     <style>
         input{text-align: right;}
     </style>
-    <script language="javascript">
+    <script>
         function goBack() {
             window.history.back();
         }
@@ -31,6 +32,11 @@
             document.forms["outForm"].elements["maxResult"].value = output_value;
 
         }
+        $(document).ready(function () {
+            $("#fade").click(function () {
+                $("#outForm").fadeTo("slow",0);
+            })
+        })
     </script>
 </head>
 <body>
@@ -66,6 +72,7 @@
             <td><input type="text" name="maxResult" size="10"></td></tr>
     </table>
 </form>
+<button id="fade">Fade the result</button>
 
 
 <button onclick="goBack()">Go Back</button>
