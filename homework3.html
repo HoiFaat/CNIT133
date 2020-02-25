@@ -2,12 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="homework2">
+    <meta name="description" content="homework3">
     <link rel="stylesheet" href="homework.css">
     <title>homework3</title>
+    <style>
+        nav li{
+            list-style: none;
+        }
+        nav a:hover{
+            color: green;
+        }
+        nav a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<h1>Homework3 Coming Soon!</h1>
-
+<h1>Homework 3 - Functions</h1>
+<nav>
+    <ul>
+        <li><a href="HW3P1.html">Part1: Student Grades</a></li>
+        <li><a href="HW3P2.html">Part2: Calculates Salesperson's Salary</a></li>
+        <li><a href="HW3P3.html">Part3: Temperature Converter</a></li>
+        <li><a href="HW3P4.html">Part4: Math: Multiplication</a></li>
+    </ul>
+</nav>
+<button onclick="goBack()">Back to Homepage</button>
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>
 </body>
 </html>

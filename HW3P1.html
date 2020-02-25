@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Homework 3 Part 1">
+    <title>Part 1</title>
+
+    <script>
+
+        function goBack() {
+            window.history.back()
+        }
+        function finalAverage() {
+            var hwAvg, midExam, finalExam, pS, finalAvg, outString;
+            hwAvg = parseInt(document.forms["inForm"].elements["num1"].value);
+            midExam = parseInt(document.forms["inForm"].elements["num2"].value);
+            finalExam = parseInt(document.forms["inForm"].elements["num3"].value);
+            pS = parseInt(document.forms["inForm"].elements["num4"].value);
+
+            finalAvg= Math.round(0.5*hwAvg + 0.2*midExam + 0.2*finalExam + 0.1*pS);
+            if(finalAvg >=90 && finalAvg <=100){
+                outString = "Your final grade is: "+finalAvg+ ". You got an A!!";
+            }else if(finalAvg >=80 && finalAvg <=89){
+                outString = "Your final grade is: "+finalAvg+ ". You got a B!!";
+            }else if(finalAvg >=70 && finalAvg <=79){
+                outString = "Your final grade is: "+finalAvg+ ". You got a C!!";
+            }else if(finalAvg >=60 && finalAvg <=69){
+                outString = "Your final grade is: " +finalAvg+ ". You got a D, you must retake the course!";
+            }else if(finalAvg <=59 && finalAvg>=0){
+                outString = "Your final grade is: " +finalAvg+ ". You got a F, you must retake the course!";
+            } else{outString="There is a error, Please enter correctly!! ";}
+            document.forms["inForm"].elements["result"].value = outString;
+
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Part1: Student Grades</h1>
+</header>
+<form id="inForm">
+    <table>
+        <td><th>Enter your Scores</th></td>
+        <tr><td>Homework Average: </td>
+            <td><input type="number" name="num1" min="0" max="100" required></td></tr>
+        <tr><td>Mid-term Exam Score: </td>
+            <td><input type="number" name="num2" min="0" max="100" required></td></tr>
+        <tr><td>Final Exam Score: </td>
+            <td><input type="number" name="num3" min="0" max="100" required></td></tr>
+        <tr><td>Participation Score: </td>
+            <td><input type="number" name="num4" min="0" max="100" required></td></tr>
+    </table>
+    <input type="button" onclick="finalAverage()" value="Submit">
+    <input type="reset" value="Reset">
+    <br>
+    <textarea rows="4" cols="40" name="result" readonly></textarea>
+</form>
+<button onclick="goBack()">Back</button>
+</body>
+</html>
