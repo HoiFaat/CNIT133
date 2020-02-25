@@ -8,12 +8,50 @@
         function goBack() {
             window.history.back()
         }
+        function convert() {
+            var c, f, rC, rF;
+            c= parseFloat(document.getElementById("c").value);
+            f= parseFloat(document.getElementById("f").value);
+            rC=Math.round(5/9*(f-32));
+            rF=Math.round((9/5*c)+32);
+            document.forms["fTc"].elements["rC"].value=rC;
+            document.forms["cTf"].elements["rF"].value=rF;
+        }
     </script>
 </head>
 <body>
 <header>
     <h1>Part3: Temperature Converter</h1>
 </header>
+<fieldset>
+<form id="cTf">
+    <table>
+        <tr><th>Celsius to Fahrenheit</th></tr>
+        <tr><td>Enter Celsius:</td></tr>
+        <tr><td><label for="c"></label><input type="number" id="c" size="10"></td></tr>
+        <tr><td>Fahrenheit is: </td></tr>
+        <tr><td><label>
+            <textarea rows="2" cols="18" name="rF" readonly></textarea>
+        </label></td></tr>
+        <tr><td><input type="button" onclick="convert()" value="Celsius To Fahrenheit"></td></tr>
+    </table>
+</form>
+</fieldset>
+<br>
+<fieldset>
+<form id="fTc">
+    <table>
+        <tr><th> Fahrenheit To Celsius</th></tr>
+        <tr><td>Enter Fahrenheit:</td></tr>
+        <tr><td><label for="f"></label><input type="number" id="f" size="10"></td></tr>
+        <tr><td>Celsius is: </td></tr>
+        <tr><td><label>
+            <textarea rows="2" cols="18" name="rC" readonly></textarea>
+        </label></td></tr>
+        <tr><td><input type="button" onclick="convert()" value="Fahrenheit To Celsius"></td></tr>
+    </table>
+</form>
+</fieldset><br>
 <button onclick="goBack()">Back</button>
 </body>
 </html>
