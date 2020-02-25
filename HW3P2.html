@@ -4,16 +4,89 @@
     <meta charset="UTF-8">
     <meta name="description" content="Homework 3 Part 2">
     <title>Part 2</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         function goBack() {
             window.history.back()
         }
+        $( function() {
+            $( document ).tooltip();
+        } );
+        function calc() {
+            var totaln1, totaln2, totaln3, totaln4, totalA, totalWeekE, n1, n2, n3, n4, msg;
+
+            n1 = parseInt(document.getElementById("i1").value);
+            n2 = parseInt(document.getElementById("i2").value);
+            n3 = parseInt(document.getElementById("i3").value);
+            n4 = parseInt(document.getElementById("i4").value);
+            totaln1 = n1*239.99;
+            totaln2 = n2*129.75;
+            totaln3 = n3*99.95;
+            totaln4 = n4*350.89;
+            totalA = totaln1+totaln2+totaln3+totaln4;
+            totalWeekE = 200 + totalA*0.09;
+            msg= totalWeekE.toFixed(2)
+            document.forms["outForm"].elements["amtSold"].value = totalA;
+            document.forms["outForm"].elements["wkEarn"].value = msg;
+            document.forms["outForm"].elements["num1"].value = n1;
+            document.forms["outForm"].elements["num2"].value = n2;
+            document.forms["outForm"].elements["num3"].value = n3;
+            document.forms["outForm"].elements["num4"].value = n4;
+
+            document.forms["outForm"].elements["r1"].value = totaln1;
+            document.forms["outForm"].elements["r2"].value = totaln2;
+            document.forms["outForm"].elements["r3"].value = totaln3;
+            document.forms["outForm"].elements["r4"].value = totaln4;
+        }
+
     </script>
+    <style>
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+        input title{
+            color: green;
+        }
+        h2{font-size: 1em;}
+    </style>
 </head>
 <body>
 <header>
     <h1>Part2: Calculates Salesperson's Salary</h1>
 </header>
+<p><label for="name">Salesperson:</label><input id="name" title="Please make sure that the salesperson's name is spelled correctly."></p>
+
+<form id="inForm">
+    <table>
+        <tr><h2>Input the number of items sold for each item number:</h2></tr>
+        <tr><td>Item1: </td>
+            <td><input type="number" id="i1" size="5" ></td></tr>
+        <tr><td>Item2: </td>
+            <td><input type="number" id="i2" size="5" ></td></tr>
+        <tr><td>Item3: </td>
+            <td><input type="number" id="i3" size="5" ></td></tr>
+        <tr><td>Item4: </td>
+            <td><input type="number" id="i4" size="5"></td></tr>
+    </table>
+    <input type="button" onclick="calc()" value="Submit">
+    <input type="reset" value="Reset">
+    <br>
+</form>
+<form id="outForm">
+    <table>
+        <tr><th>Item:</th><th>Price:</th><th>Number Sold:</th><th>Total Sales:</th></tr>
+        <tr><td>Item1: </td><td>$239.99</td><td><input type="number" name="num1"></td><td><input type="number" name="r1"></td></tr>
+        <tr><td>Item2: </td><td>$129.75</td><td><input type="number" name="num2"></td><td><input type="number" name="r2"></td></tr>
+        <tr><td>Item3: </td><td>$99.95</td><td><input type="number" name="num3"></td><td><input type="number" name="r3"></td></tr>
+        <tr><td>Item4: </td><td>$350.89</td><td><input type="number" name="num4"></td><td><input type="number" name="r4"></td></tr>
+        <tr><td colspan="3">Total Amount Sold:</td><td><input type="number"  name="amtSold"></td></tr>
+        <tr><td colspan="3">Total Weekly Earnings:</td><td><input type="number" name="wkEarn"></td></tr>
+    </table>
+    <br>
+</form>
 <button onclick="goBack()">Back</button>
 </body>
 </html>
