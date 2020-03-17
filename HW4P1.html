@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta name="description" content="Homework 4 Part 1">
+    <title>Part 1</title>
+    <script>
+        function psF() {
+            var a, b, sum, product;
+            a = 5;
+            b = 20;
+            sum = 0;
+            product = 1;
+
+            for (var i = a; i <= b; i += 3 ) {
+                sum += i;
+                product *= i;
+            }
+            document.getElementById("result").value = ("Product:" + "\n5 * 9 * 13 * 17 * 21 = " + product + "\nSum:"+ "\n5 + 9 + 13 + 17 + 21 = " + sum);
+        }
+        function psW() {
+            var a, b, sum, product;
+            a = 3;
+            sum = 0;
+            product = 1;
+            while (a<=21){
+                sum += a;
+                product *= a;
+                a += 3;
+            }
+            document.getElementById("result2").value = ("Product:" + "\n3 * 6 * 9 * 12 * 15 * 18 * 21 = " + product + "\nSum:"+ "\n3 + 6 + 9 + 12 + 15 + 18 + 21 = " + sum);
+
+        }
+        $( function() {
+            $( "#draggable" ).draggable();
+            $( "#draggable2" ).draggable();
+        } );
+    </script>
+</head>
+<body>
+<header>
+    <h1>Product and Sum</h1>
+</header>
+
+<button onclick="psF()">for Statement</button><br>
+<div id="draggable">You can move around<br>
+<textarea rows="4" cols="40" id="result" readonly></textarea><br><br>
+    </div>
+<button onclick="psW()">while Statement</button><br>
+<div id="draggable2">Move around<br>
+<textarea rows="4" cols="40" id="result2" readonly></textarea>
+    </div>
+</body>
+</html>
