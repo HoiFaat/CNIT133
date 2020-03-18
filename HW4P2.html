@@ -2,9 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="description" content="Homework 4 part 2">
+    <title>Part 2</title>
+    <script>
+
+        window.onload = function interestRate() {
+            var fillRate5 = 1;
+            var fillRate6 = 11;
+            var fillRate7 = 21;
+
+            for (var year = 1; year <= 10; year++) {
+                var principal = 1000;
+                var Rate5 = 0;
+                var Rate6 = 0;
+                var Rate7 = 0;
+
+                Rate5 = principal * (Math.pow(1 + 0.05, year));
+                document.getElementById("table").style.display = "inline";
+                document.getElementById(fillRate5).value = (Rate5).toFixed(2);
+                Rate6 = principal * (Math.pow(1 + 0.06, year));
+                document.getElementById(fillRate6).value = (Rate6).toFixed(2);
+                Rate7 = principal * (Math.pow(1 + 0.07, year));
+                document.getElementById(fillRate7).value = (Rate7).toFixed(2);
+                fillRate5++;
+                fillRate6++;
+                fillRate7++;
+            }
+            }
+
+    </script>
+    <style>
+        th{
+            background-color: darkred;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: orange;
+        }
+        tr:nth-child(odd){
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
-
+<header>
+    <h1>Calculate Compound Interest</h1>
+</header>
+    <table id="table">
+        <tr><th>Year</th><th>Amount On Deposit</th><th>Interest Rate</th></tr>
+        <tr><td>1</td><td><input type="text" readonly class="t" id="1"></td><td>0.05</td></tr>
+        <tr><td>2</td><td><input type="text" readonly class="t" id="2"></td><td>0.05</td></tr>
+        <tr><td>3</td><td><input type="text" readonly class="t" id="3"></td><td>0.05</td></tr>
+        <tr><td>4</td><td><input type="text" readonly class="t" id="4"></td><td>0.05</td></tr>
+        <tr><td>5</td><td><input type="text" readonly class="t" id="5"></td><td>0.05</td></tr>
+        <tr><td>6</td><td><input type="text" readonly class="t" id="6"></td><td>0.05</td></tr>
+        <tr><td>7</td><td><input type="text" readonly class="t" id="7"></td><td>0.05</td></tr>
+        <tr><td>8</td><td><input type="text" readonly class="t" id="8"></td><td>0.05</td></tr>
+        <tr><td>9</td><td><input type="text" readonly class="t" id="9"></td><td>0.05</td></tr>
+        <tr><td>10</td><td><input type="text" readonly class="t" id="10"></td><td>0.05</td></tr>
+        <tr></tr>
+        <tr><th>Year</th><th>Amount On Deposit</th><th>Interest Rate</th></tr>
+        <tr><td>1</td><td><input type="text" readonly class="t" id="11"></td><td>0.06</td></tr>
+        <tr><td>2</td><td><input type="text" readonly class="t" id="12"></td><td>0.06</td></tr>
+        <tr><td>3</td><td><input type="text" readonly class="t" id="13"></td><td>0.06</td></tr>
+        <tr><td>4</td><td><input type="text" readonly class="t" id="14"></td><td>0.06</td></tr>
+        <tr><td>5</td><td><input type="text" readonly class="t" id="15"></td><td>0.06</td></tr>
+        <tr><td>6</td><td><input type="text" readonly class="t" id="16"></td><td>0.06</td></tr>
+        <tr><td>7</td><td><input type="text" readonly class="t" id="17"></td><td>0.06</td></tr>
+        <tr><td>8</td><td><input type="text" readonly class="t" id="18"></td><td>0.06</td></tr>
+        <tr><td>9</td><td><input type="text" readonly class="t" id="19"></td><td>0.06</td></tr>
+        <tr><td>10</td><td><input type="text" readonly class="t" id="20"></td><td>0.06</td></tr>
+        <tr></tr>
+        <tr><th>Year</th><th>Amount On Deposit</th><th>Interest Rate</th></tr>
+        <tr><td>1</td><td><input type="text" readonly class="t" id="21"></td><td>0.07</td></tr>
+        <tr><td>2</td><td><input type="text" readonly class="t" id="22"></td><td>0.07</td></tr>
+        <tr><td>3</td><td><input type="text" readonly class="t" id="23"></td><td>0.07</td></tr>
+        <tr><td>4</td><td><input type="text" readonly class="t" id="24"></td><td>0.07</td></tr>
+        <tr><td>5</td><td><input type="text" readonly class="t" id="25"></td><td>0.07</td></tr>
+        <tr><td>6</td><td><input type="text" readonly class="t" id="26"></td><td>0.07</td></tr>
+        <tr><td>7</td><td><input type="text" readonly class="t" id="27"></td><td>0.07</td></tr>
+        <tr><td>8</td><td><input type="text" readonly class="t" id="28"></td><td>0.07</td></tr>
+        <tr><td>9</td><td><input type="text" readonly class="t" id="29"></td><td>0.07</td></tr>
+        <tr><td>10</td><td><input type="text" readonly class="t" id="30"></td><td>0.07</td></tr>
+    </table>
 </body>
 </html>
