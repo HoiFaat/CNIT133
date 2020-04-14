@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 3</title>
+    <meta name="description" content="Homework 5 part 3">
+    <script>
+        var stateArray = [["AL", "Alabama", "Montgomery", '4,887,871'], ["AK", "Alaska", "Juneau", '737,438'], ["AZ", "Arizona", "Phoenix", '7,171,646'], ["AR", "Arkansas", "Little Rock", '3,010,825'], ["CA", "California", "Sacramento", '39,557,045'], ["CO", "Colorado", "Denver", '5,694,564']];
+
+        function States()
+
+        {
+
+            var findIt = document.forms["myForm"].elements["enter_state"].value;
+
+            var found = false;
+            for (var i = 0; i < stateArray.length; i++) //Loop through the arrays
+            {
+
+                if ((stateArray[i][0].toUpperCase() == findIt.toUpperCase()) || (stateArray[i][1].toUpperCase() == findIt.toUpperCase()))
+                {
+
+
+
+                    document.forms["myForm"].elements["result"].value = stateArray[[i][0]]
+                    i = stateArray.length;
+                    found = true;
+
+                }
+
+            }
+
+            if (found == false) {
+                document.forms["myForm"].elements["result"].value = "Please Enter a state name from the list!";
+                alert("try again!")
+            }
+
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Homework 5 Part 3: State's population</h1>
+</header>
+<table id="state_table">
+    <tr>
+        <th>State Abbr:</th>
+        <th>State Name:</th>
+        <th>Capital:</th>
+        <th>Population:</th>
+    </tr>
+    <tr>
+
+        <td>
+            <input type="text" id="Abbr1" value="AL" disabled>
+        </td>
+        <td>
+            <input type="text" id="Name1" value="Alabama" disabled>
+        </td>
+        <td>
+            <input type="text" id="Capital1" value="Montgomery" disabled>
+        </td>
+        <td>
+            <input type="text" id="Population1" value="4,887,871" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Abbr2" value="AK" disabled>
+        </td>
+        <td>
+            <input type="text" id="name2" value="Alaska" disabled>
+        </td>
+        <td>
+            <input type="text" id="Capital2" value="Juneau" disabled>
+        </td>
+        <td>
+            <input type="text" id="Population2" value="737,438" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Abbr3" disabled value="AZ">
+        </td>
+        <td>
+            <input type="text" id="name3" disabled value="Arizona">
+        </td>
+        <td>
+            <input type="text" id="Capital3" disabled value="Phoenix">
+        </td>
+        <td>
+            <input type="text" id="Population3" disabled value="7,171,646">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Abbr4" value="AR" disabled>
+        </td>
+        <td>
+            <input type="text" id="name4" value="Arkansas" disabled>
+        </td>
+        <td>
+            <input type="text" id="Capital4" value="Little Rock" disabled>
+        </td>
+        <td>
+            <input type="text" id="Population4" value="3,010,825" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Abbr5" value="CA" disabled>
+        </td>
+        <td>
+            <input type="text" id="name5" value="California" disabled>
+        </td>
+        <td>
+            <input type="text" id="Capital5" value="Sacramento" disabled>
+        </td>
+        <td>
+            <input type="text" id="Population5" value="39,557,045" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="Abbr6" value="CO" disabled>
+        </td>
+        <td>
+            <input type="text" id="name6" value="Colorado" disabled>
+        </td>
+        <td>
+            <input type="text" id="Capital6" value="Denver" disabled>
+        </td>
+        <td>
+            <input type="text" id="Population6" value="5,694,564" disabled>
+        </td>
+    </tr>
+</table>
+
+<form name="myForm" id="myForm">
+
+    Enter a State:
+    <br>
+    <input type="text" size="15" name="enter_state" autofocus>
+    <br>
+
+    <input onclick="States();" type="button" value="Click" name="stateSearch" id="stateSearch">
+    <input type="reset" value="Reset" onclick="location.reload();">
+    <br>
+    <br> Results:
+
+
+
+
+    <br>
+    <input type="text" size="50" name="result" id="result" disabled>
+    <br>
+    <br>
+    <button onclick="goBack()">Go Back</button>
+
+
+
+
+</form>
+
+</body>
+</html>
