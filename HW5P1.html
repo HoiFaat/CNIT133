@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--create a form, 1. displays input text box, 2.radio buttons, 3.checkboxes and 4. select items
+    1.script user enters any data in the input box
+    2. at least ont checkbox radio button
+    3. an option from
+    4. If a field is invalid then display a message to the user
+    5. be sure to use input type="submit", input type="button"
+    6. error - do not clear entire form-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 1</title>
+    <meta name="description" content="Homework 5 part 1">
+    <script>
+        function validateFrom( )
+        {
+            valid = true;
+
+            if ( document.myForm.sN.value == "" )
+            {
+                alert ( "Please enter your Student name" );
+                valid = false;
+            }
+
+            if ( ( document.myForm.student[0].checked == false ) && ( document.myForm.student[1].checked == false ) )
+            {
+                alert ( "Please choose Full time or Part time Student" );
+                valid = false;
+            }
+
+            if ( document.myForm.unit.selectedIndex == 0 )
+            {
+                alert ( "Please select your units." );
+                valid = false;
+            }
+
+            if (( document.myForm.checkBox[0].checked == false ) && ( document.myForm.checkBox[1].checked == false ) && ( document.myForm.checkBox[2].checked == false )&&( document.myForm.checkBox[3].checked == false )&&( document.myForm.checkBox[4].checked == false )&&( document.myForm.checkBox[5].checked == false )&&( document.myForm.checkBox[6].checked == false ))
+            {
+                alert ( "Please choose a day" );
+                valid = false;
+            }
+            return valid;
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Homework 5 part 1: Validate Form</h1>
+</header>
+<form name="myForm" id="myForm" method="post" target="_blank" onsubmit="return validateFrom();">
+    <fieldset>
+        <h2>Name:</h2> Student Name:
+        <br>
+
+        <input type="text" id="sN" class="required">
+        <br>
+        <br>
+        <h2>Student Type:</h2>
+        <input type="radio" Value="fullTime" name="student" id="FT"> Full Time Student
+
+        <br>
+        <input type="radio" Value="partTime" name="student" id="PT"> Part Time Student
+        <br>
+        <br>
+        <h2>Choose days going to school:</h2>
+
+        <input type="checkbox" id="checkBox1" name="checkBox" value="Monday"> Monday
+        <br>
+        <input type="checkbox" id="checkBox2" name="checkBox" value="Tuesday"> Tuesday
+        <br>
+        <input type="checkbox" id="checkBox3" name="checkBox" value="Wednesday"> Wednesday
+        <br>
+        <input type="checkbox" id="checkBox4" name="checkBox" value="Thursday"> Thursday
+        <br>
+        <input type="checkbox" id="checkBox5" name="checkBox" value="Friday"> Friday
+        <br>
+        <input type="checkbox" id="checkBox6" name="checkBox" value="Weekend"> Weekend
+        <br>
+        <br>
+
+        <h2>Please choose How many units are you taking:</h2>
+        <select name="unit" id="unit">
+            <option>Units</option>
+            <option>1-6</option>
+            <option>6-12</option>
+            <option>12-18</option>
+
+
+
+        </select>
+        <br>
+        <br>
+
+
+
+
+    </fieldset>
+
+    <input type="submit"  value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+<button onclick="goBack()">Go Back</button>
+
+
+</body>
+</html>

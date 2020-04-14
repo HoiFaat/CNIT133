@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 2</title>
+    <meta name="description" content="Homework 5 part 2">
+    <script>
+        function goTo(myForm){
+            var myPlace = myForm.dOn.options[myForm.dOn.selectedIndex].value;
+            window.location = myPlace;
+
+
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Homework 5 Part 2: Event Handler</h1>
+</header>
+<form>
+    <h2>The onchange event handler</h2>
+    <select name="dOn" onchange="goTo(this.form);">
+        <option disabled selected>Choose a webpage:</option>
+        <option value="http://www.google.com/">Google</option>
+        <option value="http://www.youtube.com">W3Schools</option>
+        <option value="http://www.facebook.com">Facebook</option>
+    </select>
+</form>
+<br>
+<br>
+<form>
+    <h2>The onclick event handler</h2>
+    <select name="dOn">
+        <option disabled selected>Choose a webpage:</option>
+        <option value="http://www.google.com/">Google</option>
+        <option value="http://www.youtube.com">Youtube</option>
+        <option value="http://www.facebook.com">Facebook</option>
+    </select>
+
+    <input type="button" value="Submit" onClick="goTo(this.form);">
+</form>
+<br>
+<button onclick="goBack()">Go Back</button>
+</body>
+</html>
