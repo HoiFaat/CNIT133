@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 1</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function resultNum() {
+            var num=parseFloat(document.getElementById("num").value);
+            var outString;
+            var t1=num.toFixed(1);
+            var t2=num.toFixed(2);
+            var t3=num.toFixed(3);
+            var d= /^\d+\.\d{4,}$/;
+            if(d.test(document.getElementById("num").value)==false){
+                alert("please enter a correct number");
+            }else {
+                outString = ("You entered " + num + ". \nThe rounded square root of " + Math.round(num) + " is " + Math.round(Math.sqrt(num)) + " rounded to the nearest: \n– integer using math round is " + Math.round(num) + ", \n– integer using math floor is " + Math.floor(num) + ",\n– tenth using toFixed is " + t1 + ",\n– hundredth using toFixed is " + t2 + ", and\n– thousandth using toFixed is " + t3 + ".");
+                document.forms["number"].elements["result"].value = outString
+            }
+
+        }
+        function checkD(d4) {
+            var d= /^\d+\.\d{4,}$/;
+            if(d.test(d4.value)==false){
+                alert("please enter a correct number");
+            }
+        }
+    </script>
+    <style>
+        .enter input{
+            border: 2px solid black;
+        }
+        .enter{
+            font-size: 1.2em;
+        }
+        th{
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Homework 6 Part 1 - Math Object</h1>
+</header>
+<form name="number">
+<div class="enter">
+    <label for="num"><b>Enter a more than 3 decimals floating point number:</b></label>
+<br><input type="number" name="num" id="num" autocomplete="off" size="10"><br>
+</div>
+    <input type="button" onclick="resultNum()" value="Submit">
+    <input type="reset" value="reset"><br>
+
+<textarea rows="10" cols="50" name="result" readonly></textarea>
+</form>
+<br><br>
+
+<button onclick="goBack()">Go Back</button>
+</body>
+</html>

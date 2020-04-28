@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>part 3</title>
+    <meta name="description" content="homework 6 part 3">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        function separateNumber() {
+            var phoneNumber=document.getElementById("phoneNumber").value;
+            phoneNumber.split("");
+            var areaCode=phoneNumber[1]+phoneNumber[2]+phoneNumber[3];
+            var first3=phoneNumber[5]+phoneNumber[6]+phoneNumber[7];
+            var last4=phoneNumber[9]+phoneNumber[10]+phoneNumber[11]+phoneNumber[12];
+            document.forms["result"].elements["area"].value=areaCode;
+            document.forms["result"].elements["first3"].value=first3;
+            document.forms["result"].elements["last4"].value=last4;
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Homework 6 part 3: Telephone Number Format</h1>
+
+</header>
+<p>
+    <label>Phone Number:
+        <input type="text" name="phoneNumber" id="phoneNumber" size="14"><br>
+        <input type="button" onclick="separateNumber()" value="Submit">
+    </label>
+</p>
+<form name="result">
+<table>
+    <tr><td>Area Code: <input type="text" name="area" size="5"></td></tr>
+    <tr><td>First 3 digits: <input type="text" name="first3" size="5"></td></tr>
+    <tr><td>Last 4 digits: <input type="text" name="last4" size="5"></td></tr>
+</table></form>
+<br><br>
+<button onclick="goBack()">Go Back</button>
+<script>
+    $('input[name="phoneNumber"]').mask('(000)000-0000');
+</script>
+
+</body>
+</html>

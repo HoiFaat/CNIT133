@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 2</title>
+    <meta name="description" content="homework 6 part 2">
+    <script>
+        function searchC() {
+            var count=0;
+            var message;
+            var c = document.getElementById("SearchCharacter").value;
+            var string=(document.getElementById("inText").value).toLowerCase();
+            for(i=0; i<string.length; i++){
+                if(string.charAt(i)==c)
+                    count++;
+            }if (count==0){
+                message = window.open("width=300px,height=100");
+                message.document.write("<p>Search character not found in text string!</p> <input type='button' value='Close Window' onclick='window.close()'>");
+            }else {
+                document.forms["searchForm"].elements["output"].value = "You are looking character: "+c+ "\nIt has " +count+ " occurrence(s) found."
+            }
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</head>
+<body>
+<header>
+    <h1>Homework 6 Part 2: Search Character</h1>
+<!--    1. using a form allows the user to input several lines of text
+        2. uses String method charAt to search character
+        3. textarea for the text: display the number of character
+        4. a form input box for the search character
+        5. if not found text, then display within a new window w 300px h 100(window.open());'Search character not found in text string!'-->
+</header>
+<form name="searchForm">
+    <p>Search Character
+    <input type="text" id="SearchCharacter" name="SearchCharacter" maxlength="1"  size="1" required><br><br>
+        Enter your text to search character<br>
+    <textarea rows="5" cols="60" name="inText" id="inText" required>
+    </textarea><br>
+    <input type="button" onclick="searchC()" value="Submit">
+        <input type="reset" value="Reset"><br><br>
+    Occurrences of search character:<br>
+    <textarea cols="60" rows="3" name="output"></textarea>
+    </p>
+</form>
+<button onclick="goBack()">Go Back</button>
+</body>
+</html>
