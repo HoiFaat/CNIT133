@@ -2,11 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="homework7">
+    <meta name="description" content="homework6">
     <link rel="stylesheet" href="homework.css">
     <title>homework7</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        $(document).ready(function() {
+            $('.answer').hide();
+            $('.main h2').click(function() { $(this).next('.answer').toggle()
+                if($('.answer:visible').length == 0) {
+                    $(this).removeClass('close')
+                } else {
+                    $(this).addClass('close')
+                };
+            });
+        });
+
+    </script>
+    <style>
+        nav a{
+            text-decoration: none;
+            color: orange;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        nav a:hover{
+            color: blue;
+        }
+        nav li{
+            list-style: none;
+        }
+        .answer {
+            margin-left: 25px;
+        }
+        h2{
+            font-size: 1em;
+            cursor: pointer;
+        }
+        h2:hover{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-<h1>Homework7 Coming Soon!</h1>
+<h1>Homework 7 - Object Model and Event Model</h1>
+<div class="main">
+<nav>
+    <ul>
+        <li><h2>Part 1: Format Changing</h2>
+            <div class="answer">
+                <a href="HW7P1.html">*Go to part 1</a>
+            </div></li>
+        <li>
+            <h2>Part 2: DropDown Menu</h2>
+            <div class="answer">
+                <a href="HW7P2.html">*Go to part 2</a>
+            </div></li>
+    </ul>
+</nav>
+<br><button onclick="goBack()">Back to Homepage</button>
 </body>
 </html>

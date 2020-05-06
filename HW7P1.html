@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part 1</title>
+    <meta name="description" content="homework 7 part 1">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        function changeBackground(ChangeColor) {
+            var color = document.getElementById("changeBody");
+            color.className=ChangeColor;
+        }
+        function fontSize()
+        {
+            var oT = document.getElementById("OTable");
+            var FontSize = document.getElementById('size').value;
+
+            if (FontSize == "small")
+            {
+                oT.className = "small";
+            }
+            else if (FontSize == "medium")
+            {
+                oT.className = "medium";
+            }
+            else if (FontSize == "large")
+            {
+                oT.className = "large";
+            }
+        }
+        function fontStyle(style)
+        {
+            var body = document.getElementById("changeBody");
+            if(style == 0) {
+                body.className = "italic";
+            }
+            else if(style == 1) {
+                body.className = "normal";
+            }
+        }
+        function switchFontWeight(style)
+        {
+            var body = document.getElementById("changeBody");
+            if(style == 0) {
+                body.className = "bold";
+            }
+            else if(style == 1) {
+                body.className = "lighter";
+            }
+        }
+        function family() {
+            var fam=document.getElementById("changeBody");
+            fam.className="fFamily"
+        }
+
+
+    </script>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+        .blue{background-color:blue;}
+
+        .green{background-color:green;}
+
+        .pink{background-color:pink;}
+
+        .yellow{background-color:yellow;}
+
+        .small{font-size: 12px;}
+        .medium{font-size: 24px;}
+        .large{font-size: 36px;}
+
+        .italic{font-style: italic;}
+        .normal{font-style: normal;}
+
+        .bold{font-weight: bold;}
+        .lighter{font-weight: lighter;}
+        .fFamily{font-family: "Adobe Arabic";}
+    </style>
+</head>
+<body id="changeBody">
+
+<header><h1>Part 1: Format Changing</h1></header>
+<form name="myForm">
+    <table class="table" id="OTable">
+        <tr><th colspan="4">Change Background Color</th></tr>
+        <tr>
+            <td>Background: Blue<input type="radio" name="background" onclick="changeBackground('blue')"></td>
+            <td>Background: Green<input type="radio" name="background" onclick="changeBackground('green')"></td>
+            <td>Background: Pink<input type="radio" name="background" onclick="changeBackground('pink')"></td>
+            <td>Background: Yellow<input type="radio" name="background" onclick="changeBackground('yellow')"></td></tr>
+        <tr><th colspan="1">Select font size:</th><th>Choose font style:</th><th>Choose font weight:</th><th>Choose font family:</th></tr>
+        <tr><td>Font Size: <select name="size" id="size" onchange="fontSize()"><option  value="#">--Select font size--</option><option value="small">12px</option><option value="medium">24px</option><option value="large">36px</option></select> </td>
+        <td><input type="radio" name="fstyle" onclick="fontStyle(0)">italic
+            <input type="radio" name="fstyle" onclick="fontStyle(1)">normal</td>
+        <td><input type="radio" name="fweight" onclick="switchFontWeight(0)">Bold
+            <input type="radio" name="fweight" onclick="switchFontWeight(1)">Lighter</td>
+            <td><input type="button" value="Change to Adobe Arabic" onclick="family()"></td></tr>
+    </table>
+</form>
+<br>
+<button onclick="goBack()">Go Back</button>
+</body>
+</html>
