@@ -5,8 +5,40 @@
     <meta name="description" content="homework8">
     <link rel="stylesheet" href="homework.css">
     <title>homework8</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script>
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "gethint.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
 </head>
 <body>
-<h1>Homework8 Coming Soon!</h1>
+<hearder>
+    <h1>Homework 8 - Ajax Applications</h1>
+</hearder>
+<p>Typing a name in the input field below:</p>
+<form action="">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" onkeyup="showHint(this.value)">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
+<button onclick="goBack()">Home Page</button>
+
 </body>
 </html>
